@@ -7,6 +7,28 @@
     <link rel="stylesheet" href="src/script/css/style.css">
     <link rel="stylesheet" href="src/script/css/responsivo.css">
     <link rel="shortcut icon" href="src/favicon/android-chrome-512x512.png" type="image/x-icon">
+ <style>
+        /*MENSAGEM ERRO  LOGO*/
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150px; /* Altura do contêiner flexível */
+            width: 100%; /* Largura do contêiner flexível */
+            
+        }
+
+        /* CSS para formatar a imagem */
+        #image {
+            display: none;
+            width: 350px; /* Largura da imagem */
+            height: auto; /* Altura automática para manter a proporção */
+            opacity: 100%;
+            z-index: 2;
+        }
+        
+    </style>
+    
 </head>
 <body>
     <!--MENU-->
@@ -101,7 +123,7 @@
                 </div>
 
                 <!--Cadastrar-->
-                <button type="submit" class="btn-form">CADASTRAR</button>
+                <button type="submit" class="btn-form" id="btn" onclick="clickNome(),clickCpf(),clickTell(),clickSenha(),confirmacao()">CADASTRAR</button>
                 <div class="cad-login">
                     <p>Já possui uma conta? <a href="login.html">Entre aqui!</a></p>
                 </div>
@@ -110,10 +132,15 @@
     </div>
 
     <!--JAVASCRIPT-->
-    <script src="src/script/javascript/validar_cadastro.js" type="text/javascript"></script>
+    <script src="src/script/javascript/validacao.js" type="text/javascript"></script>
     <script src="src/script/javascript/diversos.js" type="text/javascript"></script>
         <!--Ícones-->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+<--Notificação de erro-->
+    <div class="image-container">
+            <img id="image" src="src/img/alertMessage.jpg" alt="Imagem">
+        </div>
 </body>
 </html>
